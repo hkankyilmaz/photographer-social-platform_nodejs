@@ -1,0 +1,27 @@
+{
+  "name": "photographer-social-platform_nodejs",
+  "version": "1.0.0",
+  "description": "social platform project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkankyilmaz/photographer-social-platform_nodejs.git"
+  },
+  "author": "Hakan KARAYILMAZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkankyilmaz/photographer-social-platform_nodejs/issues"
+  },
+  "homepage": "https://github.com/hkankyilmaz/photographer-social-platform_nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
