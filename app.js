@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import conn from "./db.js";
 import pageRoute from "./routes/pageRoutes.js";
 import photoRoute from "./routes/photoRoutes.js";
+import methodOverride from "method-override";
 import userRoute from "./routes/userRoute.js";
 import cookieParser from "cookie-parser";
 import { checkUser } from "./middlewares/authMiddleware.js";
@@ -31,6 +32,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(fileUpload({ useTempFiles: true }));
+app.use(
+  methodOverride("_method", {
+    methods: ["POST", "GET"],
+  })
+);
 
 //routes
 app.use("*", checkUser);
