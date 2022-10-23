@@ -18,7 +18,7 @@
                   <div class="row d_flex">
                      <div class="col-md-5">
                         <div class="creative">
-                           <h1>LENSLIGHT</h1>
+                           <h1>Photo</h1>
                            <a class="read_more" href="/contact">Contact Us</a>
                         </div>
                      </div>
@@ -38,7 +38,11 @@
                                        <div class="row d_flex">
                                           <div class="col-md-12">
                                              <div class="cemara">
-                                                <figure><img  src="<%= photos[0].url %>" alt="#" /></figure>
+                                                <% if (photos[0])  { %>
+                                                <figure><img width="700" height="500" src="<%= photos[0].url %>" alt="#" /></figure>
+                                                <%} else { %>
+                                                   <figure><img width="700" height="500" src="https://images.unsplash.com/photo-1666460015583-08b0117c2eea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="#" /></figure>
+                                                <% }  %>
                                              </div>
                                           </div>
                                        </div>
@@ -52,7 +56,11 @@
                                        <div class="row d_flex">
                                           <div class="col-md-12">
                                              <div class="cemara">
-                                                <figure><img src="<%= photos[1].url %>" alt="#" /></figure>
+                                                <% if (photos[0])  { %>
+                                                   <figure><img width="700" height="500" src="<%= photos[1].url %>" alt="#" /></figure>
+                                                   <%} else { %>
+                                                      <figure><img width="700" height="500" src="https://images.unsplash.com/photo-1666460015583-08b0117c2eea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="#" /></figure>
+                                                   <% }  %>
                                              </div>
                                           </div>
                                        </div>
@@ -66,7 +74,11 @@
                                        <div class="row d_flex">
                                           <div class="col-md-12">
                                              <div class="cemara">
-                                                <figure><img src="<%= photos[2].url %>" alt="#" /></figure>
+                                                <% if (photos[0])  { %>
+                                                   <figure><img width="700" height="500" src="<%= photos[2].url %>" alt="#" /></figure>
+                                                   <%} else { %>
+                                                      <figure><img width="700" height="500" src="https://images.unsplash.com/photo-1666460015583-08b0117c2eea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="#" /></figure>
+                                                   <% }  %>
                                              </div>
                                           </div>
                                        </div>
@@ -75,11 +87,11 @@
                               </div>
                            </div>
                            <!-- controls -->
-                           <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+                           <a class="carousel-control-prev " href="#banner1" role="button" data-slide="prev">
                               <i class="fa fa-arrow-left" aria-hidden="true"></i>
                               <span class="sr-only">Previous</span>
                            </a>
-                           <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+                           <a class="carousel-control-next"  href="#banner1" role="button" data-slide="next">
                               <i class="fa fa-arrow-right" aria-hidden="true"></i>
                               <span class="sr-only">Next</span>
                            </a>
@@ -158,3 +170,5 @@
 
          <!-- end footer -->
          <%- include("partials/_footer") %>
+
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates totam incidunt aliquid dicta odit ex maxime quasi voluptate officiis placeat.
