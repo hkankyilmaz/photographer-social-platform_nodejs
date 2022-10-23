@@ -10,6 +10,7 @@ const createPhoto = async (req, res) => {
       folder: "photoNetwork",
     }
   );
+
   console.log("RESULT::", result);
 
   try {
@@ -20,6 +21,7 @@ const createPhoto = async (req, res) => {
       url: result.secure_url,
       image_id: result.public_id,
     });
+
     fs.unlinkSync(req.files.image.tempFilePath);
     res.status(201).redirect("/users/dashboard");
   } catch (error) {
@@ -31,6 +33,10 @@ const createPhoto = async (req, res) => {
 };
 
 const getAllPhotos = async (req, res) => {
+  cloudinary.image(result.secure_url, {
+    secure: true,
+    transformation: [{ width: 600, height: 400 }],
+  });
   try {
     const photos = res.locals.user
       ? await Photo.find({ user: { $ne: res.locals.user._id } })
@@ -46,9 +52,15 @@ const getAllPhotos = async (req, res) => {
 const getAPhoto = async (req, res) => {
   try {
     const photo = await Photo.findById({ _id: req.params.id }).populate("user");
+    let isOwner = false;
+
+    if (res.locals.user) {
+      isOwner = photo.user.equals(res.locals.user._id);
+    }
     res.status(200).render("photo", {
       photo,
       link: "photos",
+      isOwner,
     });
   } catch (error) {
     res.status(500).json({
